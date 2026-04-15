@@ -1,18 +1,22 @@
 <div class="container">
     <div class="form-box">
-        <form #frm="ngForm">
+        <!-- #frm="ngForm" cria uma referência para o formulário -->
+        <form #frm="ngForm" (ngSubmit)="valor()">
             <h2> Calculadora </h2>
             <label for=""> Número 1 </label>
-            <input type="number" name="numero1" id="numero1" [(ngModel)]="numero1">
+            <input type="number" name="numero1" id="numero1" [(ngModel)]="numero1"> <!-- [(ngModel)] faz o two-way data binding (liga o input com a variável numero1) -->
 
             <label for=""> Número 2 </label>
-            <input type="number" name="numero2" id="numero2" [(ngModel)]="numero2">
+            <input type="number" name="numero2" id="numero2" [(ngModel)]="numero2"> <!-- ligação com a variável numero2 -->
 
-            <button type="button" (click)="valor()"> Somar </button>
+            <button type="submit"> Somar </button> <!-- dispara o (ngSubmit) que chama a função valor() -->
         </form>
 
-        <div class="result-display">
-            <p>Resultado: <span id="result"> {{ resultado }} </span></p>
+        @if(resultado){
+
+             <div class="result-display">
+            <p>Resultado: <span id="result"> {{ resultado }} </span></p> <!-- {{ }} é interpolação, usado para mostrar o valor da variável no HTML -->
         </div>
+        }
     </div>
 </div>
