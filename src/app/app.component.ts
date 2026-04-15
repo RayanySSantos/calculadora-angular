@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 
-const COMPONENTS = [CalculadoraComponent];
+const COMPONENTS = [CalculadoraComponent]
 
 @Component({
   selector: 'app-root',
